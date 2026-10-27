@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  error:
+    # Không bao giờ trả stacktrace / message nội bộ ra client
+    include-stacktrace: never
+    include-message: never
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:ojtdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
